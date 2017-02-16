@@ -3,7 +3,8 @@ const sequelize = new Sequelize('postgres://anandujjwal:lifeisawsm@localhost:543
 
 const db = {
     read() {
-        return sequelize.query('SELECT movieName , releaseDate , actors , studio FROM movies')
+        return sequelize.query('SELECT * FROM movies')
+            // return sequelize.query('SELECT movieName , releaseDate , actors , studio FROM movies')
     },
 
     insert(movieName, releaseDate, studio) {
