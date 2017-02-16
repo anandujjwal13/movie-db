@@ -10,9 +10,10 @@ const db = {
         let query = `INSERT INTO movies (movieName , releaseDate , studio) VALUES (:movieName , :releaseDate , :studio) returning movieName`
         return sequelize.query(query, { replacements: { movieName: movieName, releaseDate: releaseDate, studio: studio } })
     },
-    UpdateActors(movieName, actor) {
-        let query = `UPDATE TABLE movies SET actors = array_append(actors,'${actor}') WHERE movieName = :movieName returning movieName`
-        return sequelize.query(query, { replacements: { movieName: movieName } })
+    updateActors(movieName, actor) {
+
+        let query = `UPDATE movies SET actors = array_append(actors,'${actor}') WHERE movieName = '${movieName}' returning movieName`
+        return sequelize.query(query)
     }
 
 }

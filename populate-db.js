@@ -46,5 +46,5 @@ function populateDB() {
         })
 
 }
-populateDB()
-    //module.exports = populateDB
+
+module.exports = populateDB
